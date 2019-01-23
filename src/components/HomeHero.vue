@@ -1,14 +1,16 @@
 <template>
-    <v-container fluid fill-height class="home-hero">
+    <v-container fluid fill-height class="home-hero" style="max-height: 100vh;">
         <v-layout justify-center align-center column pa-5>
             <div class="display-4 font-weight-black white--text
-            text-xs-center">GET HEALTHY</div>
+            text-xs-center large-font">GET HEALTHY</div>
             <div class="display-4 font-weight-black white--text text-xs-center
-            mb-3">GET HAPPY</div>
+            mb-3 large-font">GET HAPPY</div>
             <div class="display-1 font-weight-bold sub-title
-            text-xs-center">Finally be the you that you were always meant to be.</div>
-            <v-btn fab class="mt-5 black darken-4">
-            <v-icon large color="white">\/</v-icon>
+            text-xs-center">Finally, be the you that you were always meant to be.</div>
+            <v-btn fab class="mt-5 circle">
+            <!-- <v-icon large color="white"> -->
+              <img class="expand-more" src="https://res.cloudinary.com/j-create-it-llc/image/upload/v1548281591/expand-more.svg">
+            <!-- </v-icon> -->
             </v-btn>
         </v-layout>
     </v-container>
@@ -30,7 +32,18 @@ export default {
     /* height: 100%; */
     height: calc(100vh - 64px);
 }
+.large-font {
+  letter-spacing: 2px !important;
+  text-shadow: -1px 2px 3px rgba(0,0,0,0.2);
+}
 .sub-title {
-  color: black;
+  color: rgb(34, 34, 34);
+}
+.expand-more {
+  height: 50px;
+  width: auto;
+}
+.circle {
+  background: #1976d2 !important;
 }
 </style>
