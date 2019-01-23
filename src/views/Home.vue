@@ -1,16 +1,16 @@
 <template>
     <div class="home">
-        <Nav />
+        <home-hero></home-hero>
     </div>
 </template>
 
 <script>
-import Nav from '@/components/Nav.vue';
+import HomeHero from '@/components/HomeHero.vue';
 
 export default {
     name: 'home',
     components: {
-        Nav
+        HomeHero
     }
 };
 </script>

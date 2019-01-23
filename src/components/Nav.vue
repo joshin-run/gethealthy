@@ -1,6 +1,6 @@
 <template>
     <span>
-        <v-navigation-drawer app v-model="drawer" class="brown lighten-2" dark disable-resize-watcher>
+        <v-navigation-drawer app v-model="drawer" class="black lighten-2" dark disable-resize-watcher>
             <v-list>
                 <template v-for="(item, index) in items">
                     <v-list-tile :key="index">
@@ -12,7 +12,7 @@
                 </template>
             </v-list>
         </v-navigation-drawer>
-        <v-toolbar app color="brown darken-4" dark>
+        <v-toolbar app color="black darken-4" dark>
             <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-spacer class="hidden-md-and-up"></v-spacer>
             <v-toolbar-title>{{appTitle}}</v-toolbar-title>
