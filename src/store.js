@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 import router from '@/router';
+import firebase from 'firebase'
 
 Vue.use(Vuex);
 
@@ -52,7 +53,7 @@ export default new Vuex.Store({
                     commit('setUser', null);
                     commit('setIsAuthenticated', false);
                 });
-                // router.push('/about');
+                router.push('/dashboard');
                 // router.push('/');
         },
         userLogin({ commit }, { email, password }) {
@@ -67,7 +68,7 @@ export default new Vuex.Store({
                     commit('setUser', null);
                     commit('setIsAuthenticated', false);
                 });
-                // router.push('/about');
+                router.push('/dashboard');
                 // router.push('/');
         },
         userSignOut({ commit }) {

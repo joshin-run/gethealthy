@@ -17,6 +17,11 @@ export default new Router({
             component: () => import('./views/About.vue')
         },
         {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: () => import('./views/Dashboard.vue')
+        },
+        {
             path: '/menu',
             name: 'menu',
             component: () => import('./views/Menu.vue')
