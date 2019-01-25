@@ -26,6 +26,8 @@
     </v-container>
 </template>
 <script>
+import firebase from 'firebase';
+
 export default {
     name: 'Join',
     data() {
@@ -46,15 +48,15 @@ export default {
         };
     },
     methods: {
-    submit() {
-        if (this.$refs.form.validate()) {
-            this.$store.dispatch('userJoin', {
-                email: this.email,
-                password: this.password
-            });
+        submit() {
+            if (this.$refs.form.validate()) {
+                this.$store.dispatch('userJoin', {
+                    email: this.email,
+                    password: this.password
+                });
+            }
         }
     }
-}
 };
 </script>
 <style scoped>
