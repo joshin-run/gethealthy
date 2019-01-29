@@ -24,7 +24,11 @@
                 <v-btn flat to="/sign-in">SIGN IN</v-btn>
                 <v-btn color="brown lighten-3" to="/join">JOIN</v-btn>
             </div>
-            <v-btn v-else outline color="white" @click="logout">Logout</v-btn>
+            <div v-else>
+                <v-btn flat to="/dashboard">DASHBOARD</v-btn>
+                <v-btn flat to="/about">PROFILE</v-btn>
+                <v-btn outline color="white" @click="logout">Logout</v-btn>
+            </div>
 
         </v-toolbar>
     </span>
@@ -35,7 +39,7 @@ export default {
     name: 'AppNavigation',
     data() {
         return {
-            appTitle: 'Meal Prep',
+            appTitle: 'Get Healthy',
             drawer: false,
             items: [{ title: 'Menu' }, { title: 'Sign In' }, { title: 'Join' }]
         };
@@ -57,5 +61,8 @@ export default {
 a {
     color: white;
     text-decoration: none;
+}
+#nav-title {
+    color: #176ABD;
 }
 </style>
