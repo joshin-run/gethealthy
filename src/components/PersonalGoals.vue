@@ -3,7 +3,11 @@
         <div class="personal-goals-section">
             <div class="section-labels">
               <h3>PERSONAL GOALS</h3>
-              <h5>Current Goal Sprint: <span>Feb 1, 2019 - Apr 15, 2019</span></h5>
+              <div>
+                <button to="/set-goals" class="set-goals-btn">Set Goals</button>
+                <button to="/enter-results" class="enter-results-btn">Enter Results</button>
+                <h5>Current Goal Sprint: <span>Feb 1, 2019 - Apr 15, 2019</span></h5>
+              </div>
             </div>
             <div class="goal-container">
               <div class="goal-tile water">
@@ -64,12 +68,34 @@ export default {
     justify-content: space-between;
     align-items: flex-start;
     margin: 0 0 20px 0;
-    h3 {
-      margin-top: -5px;
+    div {
+      h3 {
+        margin-top: -5px;
+      }
+      .set-goals-btn,
+      .enter-results-btn {
+        background: rgb(24, 132, 255);
+        color: #fff;
+        border-radius: 3px;
+        padding: 3px 12px;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+      .set-goals-btn {
+        display: inline-block;
+        margin-right: 16px;
+      }  
+      .enter-results-btn {
+        display: inline-block;
+        margin-right: 30px;
+      }  
     }
     h5 {
+      display: inline-block;
       span {
         color: rgb(147, 147, 255);
+        margin-left: 10px;
       }
     }
   }

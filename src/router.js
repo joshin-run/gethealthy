@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import store from '@/store.js'
+// import store from '@/store.js'
 
 Vue.use(Router);
 
@@ -44,6 +44,22 @@ export default new Router({
             path: '/join',
             name: 'join',
             component: () => import('./views/Join.vue')
+        },
+        {
+            path: '/set-goals',
+            name: 'setGoals',
+            component: () => import('./views/SetGoals.vue'),
+            meta: {
+                authRequired: true
+            }
+        },
+        {
+            path: '/enter-results',
+            name: 'enterResults',
+            component: () => import('./views/EnterResults.vue'),
+            meta: {
+                authRequired: true
+            }
         }
     ]
 });
