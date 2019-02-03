@@ -12,7 +12,26 @@ export default new Vuex.Store({
         apiUrl: 'https://api.edamam.com/search',
         user: null,
         isAuthenticated: false,
-        userRecipes: []
+        userRecipes: [],
+        miles: {
+            d_1: 0,
+            w_1: 0 
+        },
+        minutes: {
+            d_2: 0,
+            w_2: 0 
+        },
+        meals: {
+            d_3: 0,
+            w_3: 0 
+        },
+        water: {
+            d_4: 0,
+            w_4: 0 
+        },
+        results: {
+            empty: 0
+        }
     },
     mutations: {
         setRecipes(state, payload) {

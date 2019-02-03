@@ -3,7 +3,7 @@
         <v-layout column>
             <h1>Set Goals</h1>
             <div class="goals-wrapper">
-                <!-- <v-container id="dropdown-example" grid-list-xl> -->
+                <!-- <v-container id="dropdown-example" grid_list-xl> -->
                     <v-layout row wrap>
                         <v-flex xs12>
                             <weekly-input 
@@ -41,7 +41,7 @@
               v-on:checkbox-input="checkMarks($event, 'qSum', 'sectSum')" />
           </div> -->
 
-                 <!-- <v-container id="dropdown-example" grid-list-xl>
+                 <!-- <v-container id="dropdown-example" grid_list-xl>
                     <v-layout row wrap>
                     <v-flex xs12 sm4>
                         <p>Weeks</p>
@@ -67,25 +67,25 @@ export default {
         inputs: [
             {
                 key: 1,
-                dayId: 'd-1',
+                dayId: 'd_1',
                 weekId: 'w-1',
                 title: 'Miles'
             },
             {
                 key: 2,
-                dayId: 'd-2',
+                dayId: 'd_2',
                 weekId: 'w-2',
                 title: 'Minutes'
             },
             {
                 key: 3,
-                dayId: 'd-3',
+                dayId: 'd_3',
                 weekId: 'w-3',
                 title: 'Meals'
             },
             {
                 key: 4,
-                dayId: 'd-4',
+                dayId: 'd_4',
                 weekId: 'w-4',
                 title: 'Water'
             }

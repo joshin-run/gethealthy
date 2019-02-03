@@ -17,8 +17,8 @@ export default {
   width: 40px;
   input {
     height: auto;
-    width: 40px;
-    padding: 5px;
+    width: 35px;
+    padding: 3px;
     border: 1px solid gray;
     text-align: center;
     display: inline-block;
