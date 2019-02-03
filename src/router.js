@@ -47,7 +47,7 @@ export default new Router({
         },
         {
             path: '/set-goals',
-            name: 'setGoals',
+            name: 'SetGoals',
             component: () => import('./views/SetGoals.vue'),
             meta: {
                 authRequired: true
@@ -55,7 +55,7 @@ export default new Router({
         },
         {
             path: '/enter-results',
-            name: 'enterResults',
+            name: 'EnterResults',
             component: () => import('./views/EnterResults.vue'),
             meta: {
                 authRequired: true

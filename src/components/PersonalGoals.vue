@@ -4,8 +4,8 @@
             <div class="section-labels">
               <h3>PERSONAL GOALS</h3>
               <div>
-                <button to="/set-goals" class="set-goals-btn">Set Goals</button>
-                <button to="/enter-results" class="enter-results-btn">Enter Results</button>
+                <v-btn small color="info" to="/set-goals">Set Goals</v-btn>
+                <v-btn small color="primary" dark to="/enter-results">Enter Results</v-btn>
                 <h5>Current Goal Sprint: <span>Feb 1, 2019 - Apr 15, 2019</span></h5>
               </div>
             </div>
