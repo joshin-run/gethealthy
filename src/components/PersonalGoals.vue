@@ -10,24 +10,6 @@
               </div>
             </div>
             <div class="goal-container">
-              <div class="goal-tile water">
-                <div class="label">WATER</div>
-                <div class="data-container">
-                  <div class="percent">32%</div>
-                  <div class="accum">672</div>
-                </div>
-              </div>
-            </div>
-            <div class="goal-container">
-              <div class="goal-tile miles">
-                <div class="label">MILES</div>
-                <div class="data-container">
-                  <div class="percent">12%</div>
-                  <div class="accum">451</div>
-                </div>
-              </div>
-            </div>
-            <div class="goal-container">
               <div class="goal-tile minutes">
                 <div class="label">MINUTES</div>
                 <div class="data-container">
@@ -37,11 +19,29 @@
               </div>
             </div>
             <div class="goal-container">
+              <div class="goal-tile water">
+                <div class="label">WATER</div>
+                <div class="data-container">
+                  <div class="percent">32%</div>
+                  <div class="accum">672</div>
+                </div>
+              </div>
+            </div>
+            <div class="goal-container">
               <div class="goal-tile meals">
-                <div class="label">MEALS</div>
+                <div class="label">MEAL PLAN</div>
                 <div class="data-container">
                   <div class="percent">22%</div>
                   <div class="accum">51</div>
+                </div>
+              </div>
+            </div>
+            <div class="goal-container">
+              <div class="goal-tile miles">
+                <div class="label">MILES</div>
+                <div class="data-container">
+                  <div class="percent">12%</div>
+                  <div class="accum">451</div>
                 </div>
               </div>
             </div>

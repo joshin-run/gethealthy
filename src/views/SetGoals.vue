@@ -66,28 +66,28 @@ export default {
     data: () => ({
         inputs: [
             {
-                key: 1,
-                dayId: 'd_1',
-                weekId: 'w-1',
-                title: 'Miles'
-            },
-            {
                 key: 2,
                 dayId: 'd_2',
                 weekId: 'w-2',
                 title: 'Minutes'
             },
             {
-                key: 3,
-                dayId: 'd_3',
-                weekId: 'w-3',
-                title: 'Meals'
-            },
-            {
                 key: 4,
                 dayId: 'd_4',
                 weekId: 'w-4',
                 title: 'Water'
+            },
+            {
+                key: 3,
+                dayId: 'd_3',
+                weekId: 'w-3',
+                title: 'Meal Plan'
+            },
+            {
+                key: 1,
+                dayId: 'd_1',
+                weekId: 'w-1',
+                title: 'Miles'
             }
 
         ]

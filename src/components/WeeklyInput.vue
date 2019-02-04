@@ -1,6 +1,6 @@
 <template>
   <div class="weekly-input-container">
-    <h2 v-html=title></h2>
+    <h3 v-html=title></h3>
     <div class="per-day">
       <p>Per Day</p>
       <input v-model="day" :id="dayId">
@@ -38,8 +38,8 @@ input {
 }
 .weekly-input-container {
   width: 100%;
-  h2 {
-    color: gray;
+  h3 {
+    color: #000;
     margin-bottom: 2px;
   }
   .per-day,
