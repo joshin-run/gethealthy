@@ -3,11 +3,11 @@
     <h3 v-html=title></h3>
     <div class="per-day">
       <p>Per Day</p>
-      <input v-model="day" :id="dayId">
+      <input :id="dayId">
     </div>
     <div class="per-week">
       <p>Per Week</p>
-      <input v-model="week" :id="weekId">
+      <input :id="weekId">
     </div>
     <div class="total">
       <p>Total</p>
