@@ -26,9 +26,9 @@ export default new Router({
             path: '/dashboard',
             name: 'dashboard',
             component: () => import('./views/Dashboard.vue'),
-            // meta: {
-            //     authRequired: true
-            // }
+            meta: {
+                authRequired: true
+            }
         },
         {
             path: '/menu',

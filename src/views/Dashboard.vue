@@ -18,7 +18,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 #dashboard {
-    // background: lightgreen;
+    background: #EEEEEE;
+    height: 100%;
     .page-title {
         padding: 0;
         margin: 0 0 20px 0;
