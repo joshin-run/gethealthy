@@ -7,7 +7,9 @@ import store from './store';
 import 'roboto-fontface/css/roboto/roboto-fontface.css';
 import '@mdi/font/css/materialdesignicons.css';
 import firebase from 'firebase';
+import BootstrapVue from 'bootstrap-vue'
 
+Vue.use(BootstrapVue)
 Vue.config.productionTip = false;
 
 new Vue({
