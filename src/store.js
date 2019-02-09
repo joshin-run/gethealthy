@@ -13,6 +13,34 @@ export default new Vuex.Store({
         user: null,
         isAuthenticated: false,
         userRecipes: [],
+        setGoalsContent: [
+            {
+                key: 1,
+                title: 'Minutes',
+                dayTitle: 'Per Day',
+                weekTitle: 'Per Week',
+                totalTitle: 'Total',
+                dayId: 'minutes_d',
+                dayVal: 0,
+                weekId: 'minutes_w',
+                weekVal: 0,
+                totalWeekly: 0,
+                totalMsg: ' per week'
+            },
+            {
+                key: 1,
+                title: 'Minutes',
+                dayTitle: 'Per Day',
+                weekTitle: 'Per Week',
+                totalTitle: 'Total',
+                dayId: 'minutes_d',
+                dayVal: 0,
+                weekId: 'minutes_w',
+                weekVal: 0,
+                totalWeekly: 0,
+                totalMsg: ' per week'
+            }    
+        ],
         // minutes: {
         //     d_2: 0,
         //     w_2: 0 
@@ -29,6 +57,7 @@ export default new Vuex.Store({
         //     d_1: 0,
         //     w_1: 0 
         // },
+        
         setGoals: {
             minutes_d: 0,
             minutes_w: 0,

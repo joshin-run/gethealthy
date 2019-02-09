@@ -2,6 +2,33 @@
     <v-container >
         <v-layout column>
             <h1>Set Goals</h1>
+
+            <div v-for="(section, index) in weekly" :key="weekly.key">
+                <v-layout row wrap>
+                    <v-flex xs12>
+                        <div class="weekly-input-container">
+                            <h3>{{section.title}}</h3>
+                            <div class="per-day">
+                                <p>{{section.dayTitle}}</p>
+                                <input :value="section.dayVal"
+                                :id="section.dayId" v-model="section.dayVal">
+                                <!-- <input :value="section.dayVal" :id="section.dayId" @input="updateMessage"> -->
+                            </div>
+                            <div class="per-week">
+                                <p>{{section.weekTitle}}</p>
+                                <input :value="section.weekVal"
+                                :id="section.weekId" v-model="section.weekVal">
+                            </div>
+                                <div class="total">
+                                <p>{{section.totalTitle}}</p>
+                            <p>{{section.dayVal * section.weekVal}}
+                            {{section.title.toLowerCase()}} {{section.totalMsg}}</p>
+                            </div>
+                        </div>  
+                   </v-flex>
+                </v-layout>
+            </div>
+
             <div class="goals-wrapper">
                 <!-- <v-container id="dropdown-example" grid_list-xl> -->
                     <v-layout row wrap>
@@ -12,9 +39,11 @@
                                 v-bind:dayId="item.dayId"
                                 v-bind:weekId="item.weekId"  
                                 v-bind:title="item.title"  
+                               
                             />
                         </v-flex>
                     </v-layout>
+                    <!-- <div>{{minutes.dayly}}</div> -->
                     <v-layout class="totals-container">
                         <v-flex xs12>
                             <h1>Full Sprint Totals</h1>  
@@ -60,10 +89,15 @@
 </template>
 <script>
 import WeeklyInput from '@/components/WeeklyInput';
+import { mapState } from 'vuex'
 
 export default {
     name: 'SetGoals',
     data: () => ({
+        minutes: {
+            dayly: 0,
+            weekly: 0
+        },
         inputs: [
             {
                 key: 2,
@@ -93,8 +127,12 @@ export default {
         ]
 
     }),
-    components: {
-        WeeklyInput
+    computed: {
+        weekly () {
+            return this.$store.state.setGoalsContent
+        }
+    // components: {
+    //     WeeklyInput
     // },
     // methods: {
     //     storeId: function () {
@@ -116,6 +154,44 @@ export default {
             font-weight: normal;
         }
     }
+}
+input {
+  height: auto;
+  width: 40px;
+  padding: 5px;
+  border: 1px solid gray;
+  text-align: center;
+}
+.weekly-input-container {
+  width: 100%;
+  h3 {
+    color: #000;
+    margin-bottom: 2px;
+  }
+  .per-day,
+  .per-week,
+  .total {
+    display: inline-block;
+    margin: 0 20px 26px 0;
+    p {
+      font-size: 10px;
+      font-weight: bold;
+    }
+  }
+  .total {
+    p:nth-of-type(1) {
+      font-size: 10px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }    
+    p:nth-of-type(2) {
+      font-size: 14px;
+      font-weight: normal;
+    }    
+  }
+}
+p {
+  margin-bottom: 5px;
 }
 </style>
 

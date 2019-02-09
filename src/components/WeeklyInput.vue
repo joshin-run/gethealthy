@@ -3,7 +3,7 @@
     <h3 v-html=title></h3>
     <div class="per-day">
       <p>Per Day</p>
-      <input :value="message" :id="dayId" @input="updateMessage">
+      <input>
       <!-- <input :value="message" :id="dayId" @input="updateMessage"> -->
     </div>
     <div class="per-week">
@@ -27,14 +27,14 @@ export default {
     dayId: String,
     weekId: String
   },
-  computed: {
-    weekly () {
-      return this.$store.state
-    }
+  // computed: {
+  //   weekly () {
+  //     return this.$store.state
+  //   }
   // ...mapState({
       // message: state => state.obj.message
     // })
-  },
+  // },
   methods: {
     updateMessage (e) {
       this.$store.commit('updateMessage', e.target.value)
