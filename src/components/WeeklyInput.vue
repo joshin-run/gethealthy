@@ -4,6 +4,7 @@
     <div class="per-day">
       <p>Per Day</p>
       <input :value="message" :id="dayId" @input="updateMessage">
+      <!-- <input :value="message" :id="dayId" @input="updateMessage"> -->
     </div>
     <div class="per-week">
       <p>Per Week</p>
@@ -27,13 +28,16 @@ export default {
     weekId: String
   },
   computed: {
-    ...mapState({
-      message: state => state.obj.message
-    })
+    weekly () {
+      return this.$store.state
+    }
+  // ...mapState({
+      // message: state => state.obj.message
+    // })
   },
   methods: {
     updateMessage (e) {
-      this.$store.commit('updateMessage', e,target.value)
+      this.$store.commit('updateMessage', e.target.value)
     }
   }
 }

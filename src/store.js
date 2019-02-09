@@ -226,7 +226,7 @@ export default new Vuex.Store({
         },
         setUserRecipes(state, payload) {
             state.userRecipes = payload;
-        },
+        }
         // storeIdValue(state, item) {
         //     state.
         // }
