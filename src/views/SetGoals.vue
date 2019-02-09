@@ -67,26 +67,26 @@ export default {
         inputs: [
             {
                 key: 2,
-                dayId: 'd_2',
-                weekId: 'w-2',
+                dayId: 'minutes_d',
+                weekId: 'mintues_w',
                 title: 'Minutes'
             },
             {
                 key: 4,
-                dayId: 'd_4',
-                weekId: 'w-4',
+                dayId: 'water_d',
+                weekId: 'water_w',
                 title: 'Water'
             },
             {
                 key: 3,
-                dayId: 'd_3',
-                weekId: 'w-3',
+                dayId: 'meals_d',
+                weekId: 'meals_w',
                 title: 'Meal Plan'
             },
             {
                 key: 1,
-                dayId: 'd_1',
-                weekId: 'w-1',
+                dayId: 'miles_d',
+                weekId: 'miles_w',
                 title: 'Miles'
             }
 
@@ -95,6 +95,12 @@ export default {
     }),
     components: {
         WeeklyInput
+    // },
+    // methods: {
+    //     storeId: function () {
+            
+    //         store.commit('')
+    //     }
     }
 };
 </script>

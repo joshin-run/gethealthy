@@ -3,7 +3,7 @@
     <h3 v-html=title></h3>
     <div class="per-day">
       <p>Per Day</p>
-      <input :id="dayId">
+      <input :value="message" :id="dayId" @input="updateMessage">
     </div>
     <div class="per-week">
       <p>Per Week</p>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default {
   name: 'WeeklyInput',
@@ -25,6 +26,16 @@ export default {
     dayId: String,
     weekId: String
   },
+  computed: {
+    ...mapState({
+      message: state => state.obj.message
+    })
+  },
+  methods: {
+    updateMessage (e) {
+      this.$store.commit('updateMessage', e,target.value)
+    }
+  }
 }
 </script>
 

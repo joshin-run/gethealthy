@@ -6,7 +6,7 @@
               <div>
                 <v-btn small color="info" to="/set-goals">Set Goals</v-btn>
                 <v-btn small color="primary" dark to="/enter-results">Enter Results</v-btn>
-                <h5>Current Goal Sprint: <span>Feb 1, 2019 - Apr 15, 2019</span></h5>
+                <h5>Current Goal Sprint: <span>Feb 4, 2019 - March 28, 2019</span></h5>
               </div>
             </div>
             <div class="goal-container">

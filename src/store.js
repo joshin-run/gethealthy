@@ -13,21 +13,32 @@ export default new Vuex.Store({
         user: null,
         isAuthenticated: false,
         userRecipes: [],
-        minutes: {
-            d_2: 0,
-            w_2: 0 
-        },
-        water: {
-            d_4: 0,
-            w_4: 0 
-        },
-        meals: {
-            d_3: 0,
-            w_3: 0 
-        },
-        miles: {
-            d_1: 0,
-            w_1: 0 
+        // minutes: {
+        //     d_2: 0,
+        //     w_2: 0 
+        // },
+        // water: {
+        //     d_4: 0,
+        //     w_4: 0 
+        // },
+        // meals: {
+        //     d_3: 0,
+        //     w_3: 0 
+        // },
+        // miles: {
+        //     d_1: 0,
+        //     w_1: 0 
+        // },
+        setGoals: {
+            minutes_d: 0,
+            minutes_w: 0,
+            water_d: 0,
+            water_w: 0,
+            meals_d: 0,
+            meals_w: 0,
+            miles_d: 0,
+            miles_w: 0
+          
         },
         results: {
             empty: 0
@@ -215,7 +226,10 @@ export default new Vuex.Store({
         },
         setUserRecipes(state, payload) {
             state.userRecipes = payload;
-        }
+        },
+        // storeIdValue(state, item) {
+        //     state.
+        // }
     },
     actions: {
         async getRecipes({ state, commit }, plan) {
