@@ -24,7 +24,7 @@ export default new Vuex.Store({
                 dayVal: null,
                 weekId: 'minutes_w',
                 weekVal: null,
-                totalWeekly: 0,
+                totalWeekly: null,
                 totalMsg1: 'I will exercise for ',
                 totalMsg2: ' minutes per week'
             },
@@ -38,7 +38,7 @@ export default new Vuex.Store({
                 dayVal: null,
                 weekId: 'water_w',
                 weekVal: null,
-                totalWeekly: 0,
+                totalWeekly: null,
                 totalMsg1: 'I will drink ',
                 totalMsg2: ' ounces of water per week'
             },    
@@ -52,7 +52,7 @@ export default new Vuex.Store({
                 dayVal: null,
                 weekId: 'meals_w',
                 weekVal: null,
-                totalWeekly: 0,
+                totalWeekly: null,
                 totalMsg1: 'I will eat ',
                 totalMsg2: ' healthymiles per week'
             },
@@ -66,12 +66,12 @@ export default new Vuex.Store({
                 dayVal: null,
                 weekId: 'miles_w',
                 weekVal: null,
-                totalWeekly: 0,
+                totalWeekly: null,
                 totalMsg1: 'I will exercise the distance of ',
                 totalMsg2: ' miles per week'
             }    
         ],
-        weeks: 0,
+        weeks: null,
         // minutes: {
         //     d_2: 0,
         //     w_2: 0 

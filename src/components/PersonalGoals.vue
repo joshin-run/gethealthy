@@ -14,7 +14,9 @@
                 <div class="label">MINUTES</div>
                 <div class="data-container">
                   <div class="percent">32%</div>
-                  <div class="accum">223</div>
+                  <div class="accum">
+                    {{goals[0].dayVal * goals[0].weekVal * state.weeks}}
+                    </div>
                 </div>
               </div>
             </div>
@@ -23,7 +25,7 @@
                 <div class="label">WATER</div>
                 <div class="data-container">
                   <div class="percent">32%</div>
-                  <div class="accum">672</div>
+                  <div class="accum">{{goals[1].dayVal * goals[1].weekVal * state.weeks}}</div>
                 </div>
               </div>
             </div>
@@ -32,7 +34,7 @@
                 <div class="label">MEAL PLAN</div>
                 <div class="data-container">
                   <div class="percent">22%</div>
-                  <div class="accum">51</div>
+                  <div class="accum">{{goals[2].dayVal * goals[2].weekVal * state.weeks}}</div>
                 </div>
               </div>
             </div>
@@ -41,7 +43,7 @@
                 <div class="label">MILES</div>
                 <div class="data-container">
                   <div class="percent">12%</div>
-                  <div class="accum">451</div>
+                  <div class="accum">{{goals[3].dayVal * goals[3].weekVal * state.weeks}}</div>
                 </div>
               </div>
             </div>
@@ -51,7 +53,15 @@
 </template>
 <script>
 export default {
-    name: 'PersonalGoals'
+    name: 'PersonalGoals',
+    computed: {
+        goals () {
+          return this.$store.state.setGoalsContent
+        },
+        state () {
+          return this.$store.state
+        }
+    }
 };
 </script>
 <style lang="scss" scoped>

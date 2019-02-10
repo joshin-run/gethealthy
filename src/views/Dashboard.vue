@@ -10,7 +10,7 @@
 import PersonalGoals from '@/components/PersonalGoals';
 
 export default {
-    name: 'Dashboard',
+    name: 'Dashboard',  
     components: {
         PersonalGoals
     }

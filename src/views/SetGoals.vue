@@ -41,8 +41,10 @@
                             <div v-for="(section, index) in weekly"
                            :key="section.key">
                                 <h3>{{state.weeks * section.dayVal * section.weekVal}} total {{section.title}}</h3>
-                            </div>
-
+                            </div><br />
+                            <v-btn color="blue lighten-1" to="/dashboard"
+                            style="color: white">Save
+                            and Close</v-btn>
 
                         </div>    
                     </div>
