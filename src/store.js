@@ -21,26 +21,57 @@ export default new Vuex.Store({
                 weekTitle: 'Per Week',
                 totalTitle: 'Total',
                 dayId: 'minutes_d',
-                dayVal: 0,
+                dayVal: null,
                 weekId: 'minutes_w',
-                weekVal: 0,
+                weekVal: null,
                 totalWeekly: 0,
-                totalMsg: ' per week'
+                totalMsg1: 'I will exercise for ',
+                totalMsg2: ' minutes per week'
             },
             {
-                key: 1,
-                title: 'Minutes',
+                key: 2,
+                title: 'Water',
                 dayTitle: 'Per Day',
                 weekTitle: 'Per Week',
                 totalTitle: 'Total',
-                dayId: 'minutes_d',
-                dayVal: 0,
-                weekId: 'minutes_w',
-                weekVal: 0,
+                dayId: 'water_d',
+                dayVal: null,
+                weekId: 'water_w',
+                weekVal: null,
                 totalWeekly: 0,
-                totalMsg: ' per week'
+                totalMsg1: 'I will drink ',
+                totalMsg2: ' ounces of water per week'
+            },    
+            {
+                key: 3,
+                title: 'Healthy Meals',
+                dayTitle: 'Per Day',
+                weekTitle: 'Per Week',
+                totalTitle: 'Total',
+                dayId: 'meals_d',
+                dayVal: null,
+                weekId: 'meals_w',
+                weekVal: null,
+                totalWeekly: 0,
+                totalMsg1: 'I will eat ',
+                totalMsg2: ' healthymiles per week'
+            },
+            {
+                key: 4,
+                title: 'Miles',
+                dayTitle: 'Per Day',
+                weekTitle: 'Per Week',
+                totalTitle: 'Total',
+                dayId: 'miles_d',
+                dayVal: null,
+                weekId: 'miles_w',
+                weekVal: null,
+                totalWeekly: 0,
+                totalMsg1: 'I will exercise the distance of ',
+                totalMsg2: ' miles per week'
             }    
         ],
+        weeks: 0,
         // minutes: {
         //     d_2: 0,
         //     w_2: 0 
