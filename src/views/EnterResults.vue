@@ -9,7 +9,8 @@
                     <results-input class="inputs"
                         v-for="item in minutes.rowOne"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 2</h6>
@@ -17,7 +18,8 @@
                     <results-input class="inputs"
                         v-for="item in minutes.rowTwo"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 3</h6>
@@ -25,7 +27,8 @@
                     <results-input class="inputs"
                         v-for="item in minutes.rowThree"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 4</h6>
@@ -33,7 +36,8 @@
                     <results-input class="inputs"
                         v-for="item in minutes.rowFour"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 5</h6>
@@ -41,7 +45,8 @@
                     <results-input class="inputs"
                         v-for="item in minutes.rowFive"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 6</h6>
@@ -49,7 +54,8 @@
                     <results-input class="inputs"
                         v-for="item in minutes.rowSix"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>   
             </div>     
@@ -61,7 +67,8 @@
                     <results-input class="inputs"
                         v-for="item in water.rowOne"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 2</h6>
@@ -69,7 +76,8 @@
                     <results-input class="inputs"
                         v-for="item in water.rowTwo"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 3</h6>
@@ -77,7 +85,8 @@
                     <results-input class="inputs"
                         v-for="item in water.rowThree"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 4</h6>
@@ -85,7 +94,8 @@
                     <results-input class="inputs"
                         v-for="item in water.rowFour"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 5</h6>
@@ -93,7 +103,8 @@
                     <results-input class="inputs"
                         v-for="item in water.rowFive"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 6</h6>
@@ -101,7 +112,8 @@
                     <results-input class="inputs"
                         v-for="item in water.rowSix"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>   
             </div>     
@@ -114,7 +126,8 @@
                     <results-input class="inputs"
                         v-for="item in meals.rowOne"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 2</h6>
@@ -122,7 +135,8 @@
                     <results-input class="inputs"
                         v-for="item in meals.rowTwo"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 3</h6>
@@ -130,7 +144,8 @@
                     <results-input class="inputs"
                         v-for="item in meals.rowThree"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 4</h6>
@@ -138,7 +153,8 @@
                     <results-input class="inputs"
                         v-for="item in meals.rowFour"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 5</h6>
@@ -146,7 +162,8 @@
                     <results-input class="inputs"
                         v-for="item in meals.rowFive"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 6</h6>
@@ -154,7 +171,8 @@
                     <results-input class="inputs"
                         v-for="item in meals.rowSix"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>   
             </div>     
@@ -166,7 +184,8 @@
                     <results-input class="inputs"
                         v-for="item in miles.rowOne"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 2</h6>
@@ -174,7 +193,8 @@
                     <results-input class="inputs"
                         v-for="item in miles.rowTwo"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 3</h6>
@@ -182,7 +202,8 @@
                     <results-input class="inputs"
                         v-for="item in miles.rowThree"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 4</h6>
@@ -190,7 +211,8 @@
                     <results-input class="inputs"
                         v-for="item in miles.rowFour"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 5</h6>
@@ -198,7 +220,8 @@
                     <results-input class="inputs"
                         v-for="item in miles.rowFive"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>    
                 <h6>Week 6</h6>
@@ -206,7 +229,8 @@
                     <results-input class="inputs"
                         v-for="item in miles.rowSix"
                         v-bind:key="item.key"
-                        v-bind:id="item.id"         
+                        v-bind:id="item.id"
+                        v-on:input-change="update($event)"         
                     />
                 </div>   
             </div>     
@@ -967,6 +991,17 @@ export default {
     }),
     components: {
         ResultsInput
+    },
+    methods: {
+        update (evt) {
+            console.log('evt:', evt)
+            let obj = {
+                id: evt.path[0].id,
+                value: evt.path[0].value
+            }
+            console.log('obj:', obj)
+            this.$store.commit('updateResult', obj)
+        }
     }
 };
 </script>

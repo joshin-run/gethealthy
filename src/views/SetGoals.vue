@@ -4,6 +4,9 @@
             <div class="goals-wrapper">
                 <div class="set-goal-wrapper">
                     <h1>Set Goals </h1>
+                    <div class="btn-cntr">
+                        <v-btn class="dash-btn" color="blue lighten-1" to="/dashboard">Save and Close</v-btn>
+                    </div>
                     <div>
                         <h2 class="weeks-inpt-label">Weeks:</h2>
                         <input class="weeks-inpt" v-model="state.weeks">
@@ -41,11 +44,7 @@
                             <div v-for="(section, index) in weekly"
                            :key="section.key">
                                 <h3>{{state.weeks * section.dayVal * section.weekVal}} total {{section.title}}</h3>
-                            </div><br />
-                            <v-btn color="blue lighten-1" to="/dashboard"
-                            style="color: white">Save
-                            and Close</v-btn>
-
+                            </div>
                         </div>    
                     </div>
                 </div>
@@ -171,6 +170,16 @@ p {
 }
 .wrapper {
     padding: 20px;
+}
+.btn-cntr {
+    display: inline-block;
+    margin-bottom: 25px;
+    .dash-btn {
+        color: #fff;
+    }
+}
+h1 {
+    display: inline-block;
 }
 </style>
 

@@ -72,23 +72,6 @@ export default new Vuex.Store({
             }    
         ],
         weeks: null,
-        // minutes: {
-        //     d_2: 0,
-        //     w_2: 0 
-        // },
-        // water: {
-        //     d_4: 0,
-        //     w_4: 0 
-        // },
-        // meals: {
-        //     d_3: 0,
-        //     w_3: 0 
-        // },
-        // miles: {
-        //     d_1: 0,
-        //     w_1: 0 
-        // },
-        
         setGoals: {
             minutes_d: 0,
             minutes_w: 0,
@@ -286,6 +269,9 @@ export default new Vuex.Store({
         },
         setUserRecipes(state, payload) {
             state.userRecipes = payload;
+        },
+        updateResult(state, obj) {
+            state.enterResults[obj.id] = Number(obj.value)
         }
         // storeIdValue(state, item) {
         //     state.

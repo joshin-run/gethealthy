@@ -1,6 +1,7 @@
 <template>
   <div class="result-input-container">
-    <input v-model="message">
+    <input @change="inputChange($event)" :id=id>
+    <!-- <input v-model="message"> -->
   </div>
 </template>
 
@@ -8,7 +9,15 @@
 // import { mapState } from 'vuex'
 
 export default {
-  name: 'ResultInput'
+  name: 'ResultInput',
+  methods: {
+    inputChange (event) {
+      this.$emit('input-change', event)
+    }
+  }, 
+  props: {
+    id: String
+  }
 }
 </script>
 
