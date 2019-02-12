@@ -13,7 +13,7 @@
               <div class="goal-tile minutes">
                 <div class="label">MINUTES</div>
                 <div class="data-container">
-                  <div class="percent">32%</div>
+                  <div class="percent">{{ percentage.minutes }}%</div>
                   <div class="accum">
                     {{goals[0].dayVal * goals[0].weekVal * state.weeks}}
                     </div>
@@ -24,7 +24,7 @@
               <div class="goal-tile water">
                 <div class="label">WATER</div>
                 <div class="data-container">
-                  <div class="percent">32%</div>
+                  <div class="percent">{{ percentage.water }}%</div>
                   <div class="accum">{{goals[1].dayVal * goals[1].weekVal * state.weeks}}</div>
                 </div>
               </div>
@@ -33,7 +33,7 @@
               <div class="goal-tile meals">
                 <div class="label">MEAL PLAN</div>
                 <div class="data-container">
-                  <div class="percent">22%</div>
+                  <div class="percent">{{ percentage.meals }}%</div>
                   <div class="accum">{{goals[2].dayVal * goals[2].weekVal * state.weeks}}</div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
               <div class="goal-tile miles">
                 <div class="label">MILES</div>
                 <div class="data-container">
-                  <div class="percent">12%</div>
+                  <div class="percent">{{ percentage.miles }}%</div>
                   <div class="accum">{{goals[3].dayVal * goals[3].weekVal * state.weeks}}</div>
                 </div>
               </div>
@@ -60,6 +60,9 @@ export default {
         },
         state () {
           return this.$store.state
+        },
+        percentage () {
+          return this.$store.state.percentage
         }
     }
 };

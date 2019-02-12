@@ -72,6 +72,18 @@ export default new Vuex.Store({
             }    
         ],
         weeks: null,
+        totals: {
+            // minutes: state.setGoalsContent[0].dayVal * state.setGoalsContent[0].weekVal,
+            water: 0,
+            meals: 0,
+            miles: 0
+        },
+        percentage: {
+            minutes: 20,
+            water: 80,
+            meals: 10,
+            miles: 60
+        },
         setGoals: {
             minutes_d: 0,
             minutes_w: 0,

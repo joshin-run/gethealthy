@@ -102,6 +102,11 @@ export default {
             
     //         store.commit('')
     //     }
+    // },
+    // methods: {
+    //     calcTotal () {
+
+    //     }
     }
 };
 </script>
