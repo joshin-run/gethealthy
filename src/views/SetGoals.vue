@@ -9,7 +9,7 @@
                     </div>
                     <div>
                         <h2 class="weeks-inpt-label">Weeks:</h2>
-                        <input class="weeks-inpt" v-model="state.weeks">
+                        <input @change="totalsUpdate($event)" class="weeks-inpt" v-model.number="state.weeks">
                     </div>    
                     <div v-for="(section, index) in weekly" :key="section.key">
                         <v-layout row wrap>
@@ -18,14 +18,12 @@
                                     <h3>{{section.title}}</h3>
                                     <div class="per-day">
                                         <p>{{section.dayTitle}}</p>
-                                        <input 
-                                        :id="section.dayId" v-model="section.dayVal">
+                                        <input @change="totalsUpdate($event)" :id="section.dayId" v-model.number="section.dayVal">
                                         <!-- <input :value="section.dayVal" :id="section.dayId" @input="updateMessage"> -->
                                     </div>
                                     <div class="per-week">
                                         <p>{{section.weekTitle}}</p>
-                                        <input 
-                                        :id="section.weekId" v-model="section.weekVal">
+                                        <input @change="totalsUpdate($event)" :id="section.weekId" v-model.number="section.weekVal">
                                     </div>
                                         <div class="total">
                                         <p>{{section.totalTitle}}</p>
@@ -88,12 +86,26 @@ export default {
 
     // }),
     computed: {
+        ...mapState(['grandTotals', 'setGoalsContent', 'weeks']),
         weekly () {
             return this.$store.state.setGoalsContent
         },
         state () {
             return this.$store.state
         }
+    },
+    methods: {
+        totalsUpdate (evt) {
+            console.log('evt:', evt)
+            let tMinutes = this.weeks * this.setGoalsContent[0].dayVal * this.setGoalsContent[0].weekVal
+            let tWater = this.weeks * this.setGoalsContent[1].dayVal * this.setGoalsContent[1].weekVal
+            let tMeals = this.weeks * this.setGoalsContent[2].dayVal * this.setGoalsContent[2].weekVal
+            let tMiles = this.weeks * this.setGoalsContent[3].dayVal * this.setGoalsContent[3].weekVal
+            let tArr = [tMinutes, tWater, tMeals, tMiles]
+            console.log('tArr:', tArr)
+            this.$store.commit('updateGrandTotals', tArr)
+        }
+    }
     // components: {
     //     WeeklyInput
     // },
@@ -107,7 +119,6 @@ export default {
     //     calcTotal () {
 
     //     }
-    }
 };
 </script>
 <style lang="scss" scoped>

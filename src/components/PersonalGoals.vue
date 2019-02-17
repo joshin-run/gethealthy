@@ -15,7 +15,7 @@
                 <div class="data-container">
                   <div class="percent">{{ percentage.minutes }}%</div>
                   <div class="accum">
-                    {{goals[0].dayVal * goals[0].weekVal * state.weeks}}
+                    {{ accumResults.minutes }}
                     </div>
                 </div>
               </div>
@@ -25,7 +25,7 @@
                 <div class="label">WATER</div>
                 <div class="data-container">
                   <div class="percent">{{ percentage.water }}%</div>
-                  <div class="accum">{{goals[1].dayVal * goals[1].weekVal * state.weeks}}</div>
+                  <div class="accum">{{ accumResults.water }}</div>
                 </div>
               </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="label">MEAL PLAN</div>
                 <div class="data-container">
                   <div class="percent">{{ percentage.meals }}%</div>
-                  <div class="accum">{{goals[2].dayVal * goals[2].weekVal * state.weeks}}</div>
+                  <div class="accum">{{ accumResults.meals }}</div>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@
                 <div class="label">MILES</div>
                 <div class="data-container">
                   <div class="percent">{{ percentage.miles }}%</div>
-                  <div class="accum">{{goals[3].dayVal * goals[3].weekVal * state.weeks}}</div>
+                  <div class="accum">{{ accumResults.miles }}</div>
                 </div>
               </div>
             </div>
@@ -52,18 +52,24 @@
     <!-- </v-container> -->
 </template>
 <script>
+import { mapState } from 'vuex'
+
 export default {
     name: 'PersonalGoals',
     computed: {
+        ...mapState(['accumResults', 'percentage']),
         goals () {
           return this.$store.state.setGoalsContent
         },
         state () {
           return this.$store.state
         },
-        percentage () {
-          return this.$store.state.percentage
-        }
+        // percent () {
+        //   return this.percentage
+        // },
+        // accum () {
+        //   return this.accumResults
+        // }
     }
 };
 </script>

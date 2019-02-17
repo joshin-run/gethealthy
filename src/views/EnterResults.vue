@@ -240,6 +240,7 @@
 </template>
 <script>
 import ResultsInput from '@/components/ResultInput.vue'
+import { mapState } from 'vuex'
 
 export default {
     name: 'EnterResults',
@@ -992,6 +993,10 @@ export default {
     components: {
         ResultsInput
     },
+    computed: {
+        ...mapState(['grandTotals', 'enterResults', 'accumResults'])
+        // ...mapGetters(['calcPercentage'])
+    },
     methods: {
         update (evt) {
             console.log('evt:', evt)
@@ -1001,9 +1006,34 @@ export default {
             }
             console.log('obj:', obj)
             this.$store.commit('updateResult', obj)
+            // update totals , commit
+            this.calcAccum(evt)
+        },
+        calcAccum (evt) {
+            let arr = ['minutes', 'water', 'meals', 'miles']
+            let evtId = evt.target.id
+            let val = Number(evt.target.value)
+
+            if (evtId.indexOf(arr[0]) === 0) {
+                this.$store.commit('updateAccumResultsMinutes', val)
+            }
+            if (evtId.indexOf(arr[1]) === 0) {
+                this.$store.commit('updateAccumResultsWater', val)
+            }
+            if (evtId.indexOf(arr[2]) === 0) {
+                this.$store.commit('updateAccumResultsMeals', val)
+            }
+            if (evtId.indexOf(arr[3]) === 0) {
+                this.$store.commit('updateAccumResultsMiles', val)
+            }
+            // this.calcPercentage(arr, evt)
+        // },
+        // calcPercentage (evt) {
+        //     let val = this.accumResults / this.grandTotals
         }
     }
-};
+}
+
 </script>
 <style lang="scss" scoped>
 .results-wrapper {

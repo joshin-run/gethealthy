@@ -72,18 +72,6 @@ export default new Vuex.Store({
             }    
         ],
         weeks: null,
-        totals: {
-            // minutes: state.setGoalsContent[0].dayVal * state.setGoalsContent[0].weekVal,
-            water: 0,
-            meals: 0,
-            miles: 0
-        },
-        percentage: {
-            minutes: 20,
-            water: 80,
-            meals: 10,
-            miles: 60
-        },
         setGoals: {
             minutes_d: 0,
             minutes_w: 0,
@@ -93,7 +81,30 @@ export default new Vuex.Store({
             meals_w: 0,
             miles_d: 0,
             miles_w: 0
-          
+        },
+        grandTotals: {
+            minutes: 0,
+            water: 0,
+            meals: 0,
+            miles: 0
+        },
+        accumResults: {
+            minutes: 0,
+            water: 0,
+            meals: 0,
+            miles: 0
+        },
+        totals: {
+            // minutes: state.setGoalsContent[0].dayVal * state.setGoalsContent[0].weekVal,
+            water: 0,
+            meals: 0,
+            miles: 0
+        },
+        percentage: {
+            minutes: 0,
+            water: 0,
+            meals: 0,
+            miles: 0
         },
         results: {
             empty: 0
@@ -284,10 +295,44 @@ export default new Vuex.Store({
         },
         updateResult(state, obj) {
             state.enterResults[obj.id] = Number(obj.value)
+        },
+        // updatePercentage(state, item) {
+        //     for (let i = 0; i < 4; i++) {
+        //         state.percentage[i] = state.setGoals[i] 
+        //     }
+        updateGrandTotals(state, arr) {
+            for (let i = 0; i < 4; i++) {
+                state.grandTotals[i] = arr[i]
+            }
+        },
+        updateAccumResultsMinutes(state, val) {
+            state.accumResults.minutes += val
+            state.percentage.minutes = state.accumResults.minutes / state.grandTotals.minutes
+        },    
+        updateAccumResultsWater(state, val) {
+            state.accumResults.water += val
+            state.percentage.water = state.accumResults.water / state.grandTotals.water
+        },    
+        updateAccumResultsMeals(state, val) {
+            state.accumResults.meals += val
+            state.percentage.meals = state.accumResults.meals / state.grandTotals.meals
+        },    
+        updateAccumResultsMiles(state, val) {
+            state.accumResults.miles += val
+            state.percentage.miles = state.accumResults.miles / state.grandTotals.miles
+        // },  
+        // updatePercentageMinutes(state, val) {
+        //     state.percentage.mintues = val
+        // },  
+        // updatePercentageWater(state, val) {
+        //     state.percentage.water = val
+        // },  
+        // updatePercentageMeals(state, val) {
+        //     state.percentage.meals = val
+        // },  
+        // updatePercentageMiles(state, val) {
+        //     state.percentage.miles = val
         }
-        // storeIdValue(state, item) {
-        //     state.
-        // }
     },
     actions: {
         async getRecipes({ state, commit }, plan) {
@@ -370,5 +415,9 @@ export default new Vuex.Store({
         isAuthenticated(state) {
             return state.user !== null && state.user !== undefined;
         }
+        // calcPercentage(state) {
+            
+        //     return state.
+        // }
     }
 });

@@ -29,15 +29,10 @@ export default {
                     messagingSenderId: "551346752209"
                 }
             )
-        },
-        logStore () {
-            console.log(this.$store)
-            console.log(this.$store.state)
         }    
     },
     mounted () {
         this.initFirebase()
-        this.logStore()
     }
 };
 </script>
