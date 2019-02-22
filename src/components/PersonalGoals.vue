@@ -13,10 +13,8 @@
               <div class="goal-tile minutes">
                 <div class="label">MINUTES</div>
                 <div class="data-container">
-                  <div class="percent">{{ percentage.minutes }}%</div>
-                  <div class="accum">
-                    {{ accumResults.minutes }}
-                    </div>
+                  <div class="percent">{{ percent.minutes }}%</div>
+                  <div class="accum">{{ grandTotals.minutes }}</div>
                 </div>
               </div>
             </div>
@@ -24,8 +22,8 @@
               <div class="goal-tile water">
                 <div class="label">WATER</div>
                 <div class="data-container">
-                  <div class="percent">{{ percentage.water }}%</div>
-                  <div class="accum">{{ accumResults.water }}</div>
+                  <div class="percent">{{ percent.water }}%</div>
+                  <div class="accum">{{ grandTotals.water }}</div>
                 </div>
               </div>
             </div>
@@ -33,8 +31,8 @@
               <div class="goal-tile meals">
                 <div class="label">MEAL PLAN</div>
                 <div class="data-container">
-                  <div class="percent">{{ percentage.meals }}%</div>
-                  <div class="accum">{{ accumResults.meals }}</div>
+                  <div class="percent">{{ percent.meals }}%</div>
+                  <div class="accum">{{ grandTotals.meals }}</div>
                 </div>
               </div>
             </div>
@@ -42,8 +40,8 @@
               <div class="goal-tile miles">
                 <div class="label">MILES</div>
                 <div class="data-container">
-                  <div class="percent">{{ percentage.miles }}%</div>
-                  <div class="accum">{{ accumResults.miles }}</div>
+                  <div class="percent">{{ percent.miles }}%</div>
+                  <div class="accum">{{ grandTotals.miles }}</div>
                 </div>
               </div>
             </div>
@@ -57,19 +55,19 @@ import { mapState } from 'vuex'
 export default {
     name: 'PersonalGoals',
     computed: {
-        ...mapState(['accumResults', 'percentage']),
+        ...mapState(['accumResults', 'percentage', 'grandTotals']),
         goals () {
           return this.$store.state.setGoalsContent
         },
         state () {
           return this.$store.state
         },
-        // percent () {
-        //   return this.percentage
-        // },
-        // accum () {
-        //   return this.accumResults
-        // }
+        percent () {
+          return this.percentage
+        },
+        accum () {
+          return this.accumResults
+        }
     }
 };
 </script>

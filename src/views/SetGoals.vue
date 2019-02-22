@@ -11,7 +11,7 @@
                         <h2 class="weeks-inpt-label">Weeks:</h2>
                         <input @change="totalsUpdate($event)" class="weeks-inpt" v-model.number="state.weeks">
                     </div>    
-                    <div v-for="(section, index) in weekly" :key="section.key">
+                    <div v-for="section in weekly" :key="section.key">
                         <v-layout row wrap>
                             <v-flex xs12>
                                 <div class="weekly-input-container">
@@ -39,7 +39,7 @@
                     <div>
                         <div>
                             <h1>Totals for {{state.weeks}} weeks</h1>
-                            <div v-for="(section, index) in weekly"
+                            <div v-for="section in weekly"
                            :key="section.key">
                                 <h3>{{state.weeks * section.dayVal * section.weekVal}} total {{section.title}}</h3>
                             </div>
@@ -47,32 +47,6 @@
                     </div>
                 </div>
             </div>
-
-                <!-- <Checkbox
-              v-for="box in checkboxesOneColumnTwo"
-              v-bind:key="box.key"
-              v-bind:id="box.id"
-              v-bind:message="box.message"
-              v-bind:name="box.name"
-              v-bind:value="box.value"
-              v-bind:showIcon="box.showIcon"
-              v-bind:toolTxt="box.toolTxt"
-              v-on:checkbox-input="checkMarks($event, 'qSum', 'sectSum')" /> -->
-
-                 <!-- <v-container id="dropdown-example" grid_list-xl>
-                    <v-layout row wrap>
-                    <v-flex xs12 sm4>
-                        <p>Weeks</p>
-
-                        <v-overflow-btn
-                        :items="weeks"
-                        label="Overflow Btn"
-                        target="#dropdown-example"
-                        ></v-overflow-btn>
-                    </v-flex>
-                    </v-layout>
-                </v-container> -->
-            <!-- </div> -->
         </v-layout>
     </div>
 </template>
@@ -82,9 +56,6 @@ import { mapState } from 'vuex'
 
 export default {
     name: 'SetGoals',
-    // data: () => ({
-
-    // }),
     computed: {
         ...mapState(['grandTotals', 'setGoalsContent', 'weeks']),
         weekly () {
@@ -96,29 +67,19 @@ export default {
     },
     methods: {
         totalsUpdate (evt) {
-            console.log('evt:', evt)
             let tMinutes = this.weeks * this.setGoalsContent[0].dayVal * this.setGoalsContent[0].weekVal
             let tWater = this.weeks * this.setGoalsContent[1].dayVal * this.setGoalsContent[1].weekVal
             let tMeals = this.weeks * this.setGoalsContent[2].dayVal * this.setGoalsContent[2].weekVal
             let tMiles = this.weeks * this.setGoalsContent[3].dayVal * this.setGoalsContent[3].weekVal
             let tArr = [tMinutes, tWater, tMeals, tMiles]
-            console.log('tArr:', tArr)
-            this.$store.commit('updateGrandTotals', tArr)
+            let arr = ['minutes', 'water', 'meals', 'miles']
+            let obj = {
+                tArr: tArr,
+                arr: arr
+            }
+            this.$store.commit('updateGrandTotals', obj)
         }
     }
-    // components: {
-    //     WeeklyInput
-    // },
-    // methods: {
-    //     storeId: function () {
-            
-    //         store.commit('')
-    //     }
-    // },
-    // methods: {
-    //     calcTotal () {
-
-    //     }
 };
 </script>
 <style lang="scss" scoped>
@@ -188,7 +149,7 @@ p {
     padding: 20px;
 }
 .btn-cntr {
-    display: inline-block;
+    // display: inline-block;
     margin-bottom: 25px;
     .dash-btn {
         color: #fff;

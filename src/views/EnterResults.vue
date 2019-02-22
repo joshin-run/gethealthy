@@ -1,6 +1,9 @@
 <template>
     <div class="results-wrapper">
         <h1>Enter Results</h1>
+        <div class="btn-cntr">
+            <v-btn class="dash-btn" color="blue lighten-1" to="/dashboard">Save and Close</v-btn>
+        </div>
         <div class="results-row">
             <div class="miles-wrapper">
                 <h3>Minutes</h3>
@@ -995,41 +998,49 @@ export default {
     },
     computed: {
         ...mapState(['grandTotals', 'enterResults', 'accumResults'])
-        // ...mapGetters(['calcPercentage'])
     },
     methods: {
         update (evt) {
-            console.log('evt:', evt)
             let obj = {
-                id: evt.path[0].id,
-                value: evt.path[0].value
+                id: evt.target.id,
+                value: evt.target.value
             }
-            console.log('obj:', obj)
             this.$store.commit('updateResult', obj)
-            // update totals , commit
-            this.calcAccum(evt)
+            this.calcAccum(obj)
         },
-        calcAccum (evt) {
+        calcAccum (obj) {
             let arr = ['minutes', 'water', 'meals', 'miles']
-            let evtId = evt.target.id
-            let val = Number(evt.target.value)
-
-            if (evtId.indexOf(arr[0]) === 0) {
-                this.$store.commit('updateAccumResultsMinutes', val)
+            let catStr = obj.id.slice(0,3)
+            if (catStr === 'min') {
+                this.$store.commit('updateAccumResultsMinutes', obj.value)
+            } else if (catStr === 'wat') {
+                this.$store.commit('updateAccumResultsWater', obj.value)
+            } else if (catStr === 'mea') {
+                this.$store.commit('updateAccumResultsMeals', obj.value)
+            } else if (catStr === 'mil') {
+                this.$store.commit('updateAccumResultsMiles', obj.value)
             }
-            if (evtId.indexOf(arr[1]) === 0) {
-                this.$store.commit('updateAccumResultsWater', val)
+            this.calcPercentage(catStr)
+        },
+        calcPercentage (str) {
+            if (str === 'min') {
+                let val = 10 / this.grandTotals.minutes
+                // let val = this.accumResults.minutes / this.grandTotals.minutes
+                this.$store.commit('updatePercentageMinutes', val)
+                console.log('val:', val)
+            } else if (str === 'wat') {
+                let val = this.accumResults.water / this.grandTotals.water
+                this.$store.commit('updatePercentageWater', val)
+                console.log('val:', val)
+            } else if (str === 'mea') {
+                let val = this.accumResults.meals / this.grandTotals.meals
+                this.$store.commit('updatePercentageMeals', val)
+                console.log('val:', val)
+            } else if (str === 'mil') {
+                let val = this.accumResults.miles / this.grandTotals.miles
+                this.$store.commit('updatePercentageMiles', val)
+                console.log('val:', val)
             }
-            if (evtId.indexOf(arr[2]) === 0) {
-                this.$store.commit('updateAccumResultsMeals', val)
-            }
-            if (evtId.indexOf(arr[3]) === 0) {
-                this.$store.commit('updateAccumResultsMiles', val)
-            }
-            // this.calcPercentage(arr, evt)
-        // },
-        // calcPercentage (evt) {
-        //     let val = this.accumResults / this.grandTotals
         }
     }
 }
@@ -1068,5 +1079,7 @@ export default {
     //     // margin: 0 2px;
     // }
 }
-
+.dash-btn {
+    color: #fff;
+}
 </style>
